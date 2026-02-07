@@ -156,7 +156,7 @@ interface NetworkState {
     commentOwnerId: string | null;
   };
   setTestToolState: (state: { sourceIP: string; destIP: string }) => void;
-  setBrowserState: (state: { sourceIP: string; url: string; port: number; dnsServerIP: string }) => void;
+  setBrowserState: (state: { sourceIP: string; url: string; port: number; dnsServerIP: string; urlType: 'domain' | 'ip' }) => void;
   setGradingFastMode: (enabled: boolean) => void;
   setAnimationMode: (mode: 'step' | 'normal' | 'fast') => void;
   stepForward: () => void;

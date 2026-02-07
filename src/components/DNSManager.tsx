@@ -114,7 +114,6 @@ export const DNSManager: React.FC<DNSManagerProps> = ({ device }) => {
     setEditingId(null);
     setEditDomain('');
     setEditIP('');
-    setEditType('A');
     setError('');
   };
 
