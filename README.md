@@ -1,6 +1,7 @@
 # 七年级网络综合实验平台
 
-**综合网络知识实验与巩固工具**
+**综合网络知识实验与巩固工具**<br>
+[https://network-comprehensive-experiment-platform.vercel.app/](https://network-comprehensive-experiment-platform.vercel.app/)
 
 ## 📚 项目简介
 
