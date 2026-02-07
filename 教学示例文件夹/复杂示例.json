@@ -1,0 +1,424 @@
+{
+  "version": "1.0",
+  "timestamp": "2025-12-03T11:44:04.605Z",
+  "devices": [
+    {
+      "id": "router_1764314923367_4p6jta2gq",
+      "name": "R1-阿珍家路由",
+      "type": "router",
+      "position": {
+        "x": 240,
+        "y": 200
+      },
+      "ip": "192.168.1.1",
+      "interfaces": [
+        {
+          "id": "router_1764314923367_4p6jta2gq-lan",
+          "name": "LAN",
+          "ip": "192.168.1.1",
+          "subnetMask": "255.255.255.0",
+          "subnet": "192.168.1.0"
+        },
+        {
+          "id": "router_1764314923367_4p6jta2gq-eth1-jouz",
+          "name": "eth1",
+          "ip": "10.0.0.1",
+          "subnet": "10.0.0.0",
+          "subnetMask": "255.255.255.0"
+        },
+        {
+          "id": "router_1764314923367_4p6jta2gq-eth2-ia8m",
+          "name": "eth2",
+          "ip": "10.0.1.1",
+          "subnet": "10.0.1.0",
+          "subnetMask": "255.255.255.0"
+        }
+      ],
+      "routingTable": [
+        {
+          "destination": "192.168.1.0",
+          "nextHop": "直连",
+          "interface": "LAN",
+          "metric": 0
+        },
+        {
+          "destination": "192.168.2.0",
+          "nextHop": "R2-阿强家路由",
+          "interface": "eth1",
+          "metric": 1
+        },
+        {
+          "destination": "10.2.0.0",
+          "nextHop": "R3-公司A路由",
+          "interface": "eth2",
+          "metric": 1
+        },
+        {
+          "destination": "10.1.0.0",
+          "nextHop": "R3-公司A路由",
+          "interface": "eth2",
+          "metric": 1
+        }
+      ]
+    },
+    {
+      "id": "router_1764314923367_ccwtt93j7",
+      "name": "R2-阿强家路由",
+      "type": "router",
+      "position": {
+        "x": 560,
+        "y": 200
+      },
+      "ip": "192.168.2.1",
+      "interfaces": [
+        {
+          "id": "router_1764314923367_ccwtt93j7-lan",
+          "name": "LAN",
+          "ip": "192.168.2.1",
+          "subnetMask": "255.255.255.0",
+          "subnet": "192.168.2.0"
+        },
+        {
+          "id": "router_1764314923367_ccwtt93j7-eth1-zqi8",
+          "name": "eth1",
+          "ip": "10.0.0.2",
+          "subnet": "10.0.0.0",
+          "subnetMask": "255.255.255.0"
+        },
+        {
+          "id": "router_1764314923367_ccwtt93j7-eth2-flg4",
+          "name": "eth2",
+          "ip": "10.0.2.1",
+          "subnet": "10.0.2.0",
+          "subnetMask": "255.255.255.0"
+        }
+      ],
+      "routingTable": [
+        {
+          "destination": "192.168.2.0",
+          "nextHop": "直连",
+          "interface": "LAN",
+          "metric": 0
+        },
+        {
+          "destination": "192.168.1.0",
+          "nextHop": "R1-阿珍家路由",
+          "interface": "eth1",
+          "metric": 1
+        },
+        {
+          "destination": "10.2.0.0",
+          "nextHop": "R3-公司A路由",
+          "interface": "eth2",
+          "metric": 1
+        },
+        {
+          "destination": "10.1.0.0",
+          "nextHop": "R3-公司A路由",
+          "interface": "eth2",
+          "metric": 1
+        }
+      ]
+    },
+    {
+      "id": "router_1764314923367_faf0uuqrg",
+      "name": "R3-公司A路由",
+      "type": "router",
+      "position": {
+        "x": 420,
+        "y": 420
+      },
+      "ip": "10.2.0.1",
+      "interfaces": [
+        {
+          "id": "router_1764314923367_faf0uuqrg-lan",
+          "name": "LAN",
+          "ip": "10.2.0.1",
+          "subnetMask": "255.255.255.0",
+          "subnet": "10.2.0.0"
+        },
+        {
+          "id": "router_1764314923367_faf0uuqrg-eth1-52n4",
+          "name": "eth1",
+          "ip": "10.0.1.2",
+          "subnet": "10.0.1.0",
+          "subnetMask": "255.255.255.0"
+        },
+        {
+          "id": "router_1764314923367_faf0uuqrg-eth2-ghzn",
+          "name": "eth2",
+          "ip": "10.0.2.2",
+          "subnet": "10.0.2.0",
+          "subnetMask": "255.255.255.0"
+        },
+        {
+          "id": "router_1764314923367_faf0uuqrg-eth3-gkoy",
+          "name": "eth3",
+          "ip": "10.0.3.1",
+          "subnet": "10.0.3.0",
+          "subnetMask": "255.255.255.0"
+        }
+      ],
+      "routingTable": [
+        {
+          "destination": "10.2.0.0",
+          "nextHop": "直连",
+          "interface": "LAN",
+          "metric": 0
+        },
+        {
+          "destination": "192.168.1.0",
+          "nextHop": "R1-阿珍家路由",
+          "interface": "eth1",
+          "metric": 1
+        },
+        {
+          "destination": "192.168.2.0",
+          "nextHop": "R2-阿强家路由",
+          "interface": "eth2",
+          "metric": 1
+        },
+        {
+          "destination": "10.1.0.0",
+          "nextHop": "R4-公司B路由",
+          "interface": "eth3",
+          "metric": 1
+        }
+      ]
+    },
+    {
+      "id": "router_1764314923367_ve7yqblhz",
+      "name": "R4-公司B路由",
+      "type": "router",
+      "position": {
+        "x": 720,
+        "y": 420
+      },
+      "ip": "10.1.0.1",
+      "interfaces": [
+        {
+          "id": "router_1764314923367_ve7yqblhz-lan",
+          "name": "LAN",
+          "ip": "10.1.0.1",
+          "subnetMask": "255.255.255.0",
+          "subnet": "10.1.0.0"
+        },
+        {
+          "id": "router_1764314923367_ve7yqblhz-eth1-3ctu",
+          "name": "eth1",
+          "ip": "10.0.3.2",
+          "subnet": "10.0.3.0",
+          "subnetMask": "255.255.255.0"
+        }
+      ],
+      "routingTable": [
+        {
+          "destination": "10.1.0.0",
+          "nextHop": "直连",
+          "interface": "LAN",
+          "metric": 0
+        },
+        {
+          "destination": "192.168.1.0",
+          "nextHop": "R3-公司A路由",
+          "interface": "eth1",
+          "metric": 1
+        },
+        {
+          "destination": "192.168.2.0",
+          "nextHop": "R3-公司A路由",
+          "interface": "eth1",
+          "metric": 1
+        },
+        {
+          "destination": "10.2.0.0",
+          "nextHop": "R3-公司A路由",
+          "interface": "eth1",
+          "metric": 1
+        }
+      ]
+    },
+    {
+      "id": "pc_1764314923367_0df6nelhg",
+      "name": "PC1-阿珍",
+      "type": "pc",
+      "position": {
+        "x": 100,
+        "y": 100
+      },
+      "ip": "192.168.1.10",
+      "interfaces": [],
+      "gateway": "192.168.1.1",
+      "dnsServer": "10.1.0.2"
+    },
+    {
+      "id": "pc_1764314923367_28c988x6s",
+      "name": "PC2-阿珍妈妈",
+      "type": "pc",
+      "position": {
+        "x": 100,
+        "y": 240
+      },
+      "ip": "192.168.1.11",
+      "interfaces": [],
+      "gateway": "192.168.1.1",
+      "dnsServer": "10.1.0.2"
+    },
+    {
+      "id": "pc_1764314923367_tdyg0o1sh",
+      "name": "PC3-阿强",
+      "type": "pc",
+      "position": {
+        "x": 760,
+        "y": 100
+      },
+      "ip": "192.168.2.10",
+      "interfaces": [],
+      "gateway": "192.168.2.1",
+      "dnsServer": "10.1.0.2"
+    },
+    {
+      "id": "pc_1764314923367_cnug8619x",
+      "name": "PC4-阿强爸爸",
+      "type": "pc",
+      "position": {
+        "x": 760,
+        "y": 240
+      },
+      "ip": "192.168.2.11",
+      "interfaces": [],
+      "gateway": "192.168.2.1",
+      "dnsServer": "10.1.0.2"
+    },
+    {
+      "id": "web_1764314923367_4096s2cob",
+      "name": "Web1-公司A",
+      "type": "web",
+      "position": {
+        "x": 320,
+        "y": 540
+      },
+      "ip": "10.2.0.10",
+      "interfaces": [],
+      "port": 80,
+      "domain": "www.companya.com",
+      "webContent": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>公司A门户</title>\n</head>\n<body>\n  <h1>公司A门户</h1>\n  <p>公司A提供的企业应用服务</p>\n  <p>服务器IP: 10.2.0.10</p>\n</body>\n</html>"
+    },
+    {
+      "id": "web_1764314923367_feoctjpvk",
+      "name": "Web2-公司B",
+      "type": "web",
+      "position": {
+        "x": 820,
+        "y": 540
+      },
+      "ip": "10.1.0.10",
+      "interfaces": [],
+      "port": 80,
+      "domain": "www.search.com",
+      "webContent": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>搜索引擎</title>\n</head>\n<body>\n  <h1>搜索引擎</h1>\n  <p>公司B提供的搜索服务</p>\n  <p>服务器IP: 10.1.0.10</p>\n</body>\n</html>"
+    },
+    {
+      "id": "dns_1764314923367_wm69xyw8x",
+      "name": "DNS2-公司B",
+      "type": "dns",
+      "position": {
+        "x": 900,
+        "y": 420
+      },
+      "ip": "10.1.0.2",
+      "interfaces": [],
+      "gateway": "10.1.0.1",
+      "dnsRecords": [
+        {
+          "id": "dnsrecord_1764314923367_y2r6329ya",
+          "domain": "www.companya.com",
+          "ip": "10.2.0.10",
+          "type": "A"
+        },
+        {
+          "id": "dns-1764723212176",
+          "domain": "www.search.com",
+          "ip": "10.1.0.10",
+          "type": "A"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn_1764314923367_3tcsrijt6",
+      "source": "pc_1764314923367_0df6nelhg",
+      "target": "router_1764314923367_4p6jta2gq"
+    },
+    {
+      "id": "conn_1764314923367_8hr9hg55e",
+      "source": "pc_1764314923367_28c988x6s",
+      "target": "router_1764314923367_4p6jta2gq"
+    },
+    {
+      "id": "conn_1764314923367_vtbn3tcxr",
+      "source": "pc_1764314923367_tdyg0o1sh",
+      "target": "router_1764314923367_ccwtt93j7"
+    },
+    {
+      "id": "conn_1764314923367_06ze6jpv3",
+      "source": "pc_1764314923367_cnug8619x",
+      "target": "router_1764314923367_ccwtt93j7"
+    },
+    {
+      "id": "conn_1764314923367_vsvywztsw",
+      "source": "web_1764314923367_4096s2cob",
+      "target": "router_1764314923367_faf0uuqrg"
+    },
+    {
+      "id": "conn_1764314923367_y3mo9w7lw",
+      "source": "web_1764314923367_feoctjpvk",
+      "target": "router_1764314923367_ve7yqblhz"
+    },
+    {
+      "id": "conn_1764314923367_e6zrmhxo8",
+      "source": "dns_1764314923367_wm69xyw8x",
+      "target": "router_1764314923367_ve7yqblhz"
+    },
+    {
+      "id": "conn_1764314923367_swqm87f3e",
+      "source": "router_1764314923367_4p6jta2gq",
+      "target": "router_1764314923367_ccwtt93j7",
+      "sourceInterfaceId": "router_1764314923367_4p6jta2gq-eth1-jouz",
+      "targetInterfaceId": "router_1764314923367_ccwtt93j7-eth1-zqi8"
+    },
+    {
+      "id": "conn_1764314923367_rs3iqyx6r",
+      "source": "router_1764314923367_4p6jta2gq",
+      "target": "router_1764314923367_faf0uuqrg",
+      "sourceInterfaceId": "router_1764314923367_4p6jta2gq-eth2-ia8m",
+      "targetInterfaceId": "router_1764314923367_faf0uuqrg-eth1-52n4"
+    },
+    {
+      "id": "conn_1764314923367_x43tq1wu6",
+      "source": "router_1764314923367_ccwtt93j7",
+      "target": "router_1764314923367_faf0uuqrg",
+      "sourceInterfaceId": "router_1764314923367_ccwtt93j7-eth2-flg4",
+      "targetInterfaceId": "router_1764314923367_faf0uuqrg-eth2-ghzn"
+    },
+    {
+      "id": "conn_1764314923367_tohodr2xl",
+      "source": "router_1764314923367_faf0uuqrg",
+      "target": "router_1764314923367_ve7yqblhz",
+      "sourceInterfaceId": "router_1764314923367_faf0uuqrg-eth3-gkoy",
+      "targetInterfaceId": "router_1764314923367_ve7yqblhz-eth1-3ctu"
+    }
+  ],
+  "testToolState": {
+    "sourceIP": "",
+    "destIP": ""
+  },
+  "browserState": {
+    "sourceIP": "",
+    "url": "",
+    "port": 80,
+    "dnsServerIP": "",
+    "urlType": "domain"
+  }
+}

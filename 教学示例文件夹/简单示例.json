@@ -1,0 +1,156 @@
+{
+  "version": "1.0",
+  "timestamp": "2025-12-03T11:45:49.413Z",
+  "devices": [
+    {
+      "id": "pc1",
+      "type": "pc",
+      "name": "PC1",
+      "ip": "192.168.1.10",
+      "gateway": "192.168.1.1",
+      "dnsServer": "192.168.3.20",
+      "interfaces": [],
+      "routingTable": [],
+      "position": {
+        "x": 136.66666666666669,
+        "y": 297.77777777777777
+      }
+    },
+    {
+      "id": "r1",
+      "type": "router",
+      "name": "R1",
+      "ip": "192.168.1.1",
+      "routingTable": [
+        {
+          "destination": "192.168.3.0",
+          "nextHop": "R2",
+          "metric": 0,
+          "interface": "eth2"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "LAN",
+          "ip": "192.168.1.1",
+          "subnet": "192.168.1.0",
+          "subnetMask": "255.255.255.0"
+        },
+        {
+          "id": "r1-eth2-mi8aaxeg-czlb",
+          "name": "eth2",
+          "ip": "10.0.2.1",
+          "subnet": "10.0.2.0",
+          "subnetMask": "255.255.255.0"
+        }
+      ],
+      "position": {
+        "x": 300,
+        "y": 300
+      }
+    },
+    {
+      "id": "r3",
+      "type": "router",
+      "name": "R2",
+      "ip": "192.168.3.1",
+      "routingTable": [
+        {
+          "destination": "192.168.3.0",
+          "nextHop": "直连",
+          "metric": 0,
+          "interface": "LAN"
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "LAN",
+          "ip": "192.168.3.1",
+          "subnet": "192.168.3.0",
+          "subnetMask": "255.255.255.0"
+        },
+        {
+          "id": "r3-eth2-mi8aaxeg-tis7",
+          "name": "eth2",
+          "ip": "10.0.2.2",
+          "subnet": "10.0.2.0",
+          "subnetMask": "255.255.255.0"
+        }
+      ],
+      "position": {
+        "x": 481.1111111111111,
+        "y": 296.6666666666667
+      }
+    },
+    {
+      "id": "web1",
+      "type": "web",
+      "name": "Web1",
+      "ip": "192.168.3.10",
+      "port": 80,
+      "domain": "www.test.com",
+      "webContent": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>测试网站</title>\n</head>\n<body>\n  <h1>恭喜你！访问成功！</h1>\n  <p>这是B级考试的目标网站</p>\n</body>\n</html>",
+      "interfaces": [],
+      "routingTable": [],
+      "position": {
+        "x": 684.0916810592976,
+        "y": 231.38687392055266
+      }
+    },
+    {
+      "id": "dns1",
+      "type": "dns",
+      "name": "DNS1",
+      "ip": "192.168.3.20",
+      "dnsRecords": [
+        {
+          "id": "dns-1764333839605",
+          "domain": "www.a.com",
+          "ip": "192.168.3.10",
+          "type": "A"
+        }
+      ],
+      "interfaces": [],
+      "routingTable": [],
+      "position": {
+        "x": 688.8888888888889,
+        "y": 364.44444444444446
+      }
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn-pc1-r1",
+      "source": "pc1",
+      "target": "r1"
+    },
+    {
+      "id": "conn-r3-web1",
+      "source": "r3",
+      "target": "web1"
+    },
+    {
+      "id": "conn-r3-dns1",
+      "source": "r3",
+      "target": "dns1"
+    },
+    {
+      "id": "conn-1763694727576",
+      "source": "r1",
+      "target": "r3",
+      "sourceInterfaceId": "r1-eth2-mi8aaxeg-czlb",
+      "targetInterfaceId": "r3-eth2-mi8aaxeg-tis7"
+    }
+  ],
+  "testToolState": {
+    "sourceIP": "192.168.1.10",
+    "destIP": "192.168.3.10"
+  },
+  "browserState": {
+    "sourceIP": "192.168.1.10",
+    "url": "www.a.com",
+    "port": 80,
+    "dnsServerIP": "192.168.3.20",
+    "urlType": "domain"
+  }
+}

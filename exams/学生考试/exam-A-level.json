@@ -1,0 +1,221 @@
+{
+  "version": "1.0",
+  "timestamp": "2025-11-21T03:13:16.054Z",
+  "devices": [
+    {
+      "id": "pc1",
+      "type": "pc",
+      "name": "PC1",
+      "ip": "192.168.1.10",
+      "gateway": "192.168.1.1",
+      "dnsServer": "192.168.3.20",
+      "interfaces": [],
+      "routingTable": [],
+      "position": {
+        "x": 100,
+        "y": 300
+      }
+    },
+    {
+      "id": "r1",
+      "type": "router",
+      "name": "R1",
+      "ip": "192.168.1.1",
+      "routingTable": [],
+      "interfaces": [
+        {
+          "name": "LAN",
+          "ip": "192.168.1.1",
+          "subnet": "192.168.1.0",
+          "subnetMask": "255.255.255.0"
+        },
+        {
+          "id": "r1-eth1-mi8a9cua-r2ye",
+          "name": "eth1",
+          "ip": "10.0.0.1",
+          "subnet": "10.0.0.0",
+          "subnetMask": "255.255.255.0"
+        },
+        {
+          "id": "r1-eth2-mi8aaxeg-czlb",
+          "name": "eth2",
+          "ip": "10.0.2.1",
+          "subnet": "10.0.2.0",
+          "subnetMask": "255.255.255.0"
+        }
+      ],
+      "position": {
+        "x": 300,
+        "y": 300
+      }
+    },
+    {
+      "id": "r2",
+      "type": "router",
+      "name": "R2",
+      "ip": "192.168.10.1",
+      "routingTable": [
+        {
+          "destination": "192.168.1.0",
+          "nextHop": "R1",
+          "interface": "eth1",
+          "metric": 1
+        },
+        {
+          "destination": "192.168.3.0",
+          "nextHop": "R3",
+          "interface": "eth2",
+          "metric": 1
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "LAN",
+          "ip": "192.168.10.1",
+          "subnet": "192.168.10.0",
+          "subnetMask": "255.255.255.0"
+        },
+        {
+          "id": "r2-eth1-mi8a9cua-2lax",
+          "name": "eth1",
+          "ip": "10.0.0.2",
+          "subnet": "10.0.0.0",
+          "subnetMask": "255.255.255.0"
+        },
+        {
+          "id": "r2-eth2-mi8a9e0l-257s",
+          "name": "eth2",
+          "ip": "10.0.1.1",
+          "subnet": "10.0.1.0",
+          "subnetMask": "255.255.255.0"
+        }
+      ],
+      "position": {
+        "x": 500,
+        "y": 148.73500792034397
+      }
+    },
+    {
+      "id": "r3",
+      "type": "router",
+      "name": "R3",
+      "ip": "192.168.3.1",
+      "routingTable": [
+        {
+          "destination": "192.168.1.0",
+          "nextHop": "R1",
+          "interface": "eth2",
+          "metric": 1
+        },
+        {
+          "destination": "192.168.1.0",
+          "nextHop": "R2",
+          "interface": "eth1",
+          "metric": 2
+        }
+      ],
+      "interfaces": [
+        {
+          "name": "LAN",
+          "ip": "192.168.3.1",
+          "subnet": "192.168.3.0",
+          "subnetMask": "255.255.255.0"
+        },
+        {
+          "id": "r3-eth1-mi8a9e0l-k3ik",
+          "name": "eth1",
+          "ip": "10.0.1.2",
+          "subnet": "10.0.1.0",
+          "subnetMask": "255.255.255.0"
+        },
+        {
+          "id": "r3-eth2-mi8aaxeg-tis7",
+          "name": "eth2",
+          "ip": "10.0.2.2",
+          "subnet": "10.0.2.0",
+          "subnetMask": "255.255.255.0"
+        }
+      ],
+      "position": {
+        "x": 700,
+        "y": 300
+      }
+    },
+    {
+      "id": "web1",
+      "type": "web",
+      "name": "Web1",
+      "ip": "192.168.3.10",
+      "port": 80,
+      "domain": "www.test.com",
+      "webContent": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>测试网站</title>\n</head>\n<body>\n  <h1>恭喜你！访问成功！</h1>\n  <p>这是A级考试的目标网站</p>\n</body>\n</html>",
+      "interfaces": [],
+      "routingTable": [],
+      "position": {
+        "x": 900,
+        "y": 200
+      }
+    },
+    {
+      "id": "dns1",
+      "type": "dns",
+      "name": "DNS1",
+      "ip": "192.168.3.20",
+      "dnsRecords": [],
+      "interfaces": [],
+      "routingTable": [],
+      "position": {
+        "x": 900,
+        "y": 400
+      }
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn-pc1-r1",
+      "source": "pc1",
+      "target": "r1"
+    },
+    {
+      "id": "conn-r3-web1",
+      "source": "r3",
+      "target": "web1"
+    },
+    {
+      "id": "conn-r3-dns1",
+      "source": "r3",
+      "target": "dns1"
+    },
+    {
+      "id": "conn-1763694654273",
+      "source": "r1",
+      "target": "r2",
+      "sourceInterfaceId": "r1-eth1-mi8a9cua-r2ye",
+      "targetInterfaceId": "r2-eth1-mi8a9cua-2lax"
+    },
+    {
+      "id": "conn-1763694655797",
+      "source": "r2",
+      "target": "r3",
+      "sourceInterfaceId": "r2-eth2-mi8a9e0l-257s",
+      "targetInterfaceId": "r3-eth1-mi8a9e0l-k3ik"
+    },
+    {
+      "id": "conn-1763694727576",
+      "source": "r1",
+      "target": "r3",
+      "sourceInterfaceId": "r1-eth2-mi8aaxeg-czlb",
+      "targetInterfaceId": "r3-eth2-mi8aaxeg-tis7"
+    }
+  ],
+  "testToolState": {
+    "sourceIP": "192.168.1.10",
+    "destIP": "192.168.3.10"
+  },
+  "browserState": {
+    "sourceIP": "192.168.1.10",
+    "url": "www.test.com",
+    "port": 80,
+    "dnsServerIP": "192.168.3.20"
+  }
+}
